@@ -91,21 +91,21 @@ def main():
     print("=" * 60 + "\n")
 
     # === STEP 1-3: Read, Parse, Validate ===
-    print("📂 Step 1: Reading sales data...")
+    print(" Step 1: Reading sales data...")
     raw_lines = read_sales_data('data/sales_data.txt')
 
     if not raw_lines:
-        print("❌ No data to process. Exiting.")
+        print(" No data to process. Exiting.")
         return
 
-    print("\n📊 Step 2: Parsing transactions...")
+    print("\n Step 2: Parsing transactions...")
     transactions = parse_and_clean_transactions(raw_lines)
 
-    print("\n✅ Step 3: Validating data...")
+    print("\n Step 3: Validating data...")
     transactions = validate_transactions(transactions)
 
     if not transactions:
-        print("❌ No valid transactions. Exiting.")
+        print(" No valid transactions. Exiting.")
         return
 
     # === STEP 4-6: User Filtering ===
@@ -165,13 +165,13 @@ def main():
     print("-" * 60)
 
     total_rev = calculate_total_revenue(transactions)
-    print(f"💰 Total Revenue: ${total_rev:,.2f}")
+    print(f" Total Revenue: ${total_rev:,.2f}")
 
     regions_sales = region_wise_sales(transactions)
-    print(f"🌎 Top Region: {max(regions_sales, key=regions_sales.get)} (${max(regions_sales.values()):,.2f})")
+    print(f" Top Region: {max(regions_sales, key=regions_sales.get)} (${max(regions_sales.values()):,.2f})")
 
     date_info = date_based_analysis(transactions)
-    print(f"📅 Peak Sales Day: {date_info['peak_day']}")
+    print(f" Peak Sales Day: {date_info['peak_day']}")
 
     # === STEP 9-11: API Enrichment ===
     print("\n" + "-" * 60)
@@ -191,11 +191,11 @@ def main():
 
     # === Completion ===
     print("\n" + "=" * 60)
-    print("✅ ANALYSIS COMPLETE!".center(60))
+    print(" ANALYSIS COMPLETE!".center(60))
     print("=" * 60)
     print("\nGenerated files:")
-    print("  📄 output/enriched_sales_data.txt")
-    print("  📊 output/sales_report.txt")
+    print("   output/enriched_sales_data.txt")
+    print("   output/sales_report.txt")
     print("\n")
 
 
@@ -205,7 +205,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\n\n⚠ Process interrupted by user")
     except Exception as e:
-        print(f"\n❌ Critical Error: {e}")
+        print(f"\n Critical Error: {e}")
         import traceback
         traceback.print_exc()
 
