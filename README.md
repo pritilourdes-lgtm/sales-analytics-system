@@ -131,5 +131,4 @@ Priti Saldanha
 
 ## License
 
-MIT
-nul not found
+Priti Saldanha
