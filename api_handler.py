@@ -19,7 +19,7 @@ def fetch_all_products():
 		print("✗ 'requests' not installed — cannot fetch products.")
 		return {}
 	try:
-		print("🌐 Fetching product data from API...")
+		print(" Fetching product data from API...")
 		resp = requests.get(url, timeout=10)
 		resp.raise_for_status()
 		data = resp.json()
